@@ -68,7 +68,7 @@
     "postcss": "^5.0.21",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
-    "rimraf": "^2.7.1",
+    "rimraf": "^2.5.2",
     "sass-loader": "^3.2.1",
     "should": "^9.0.2",
     "style-loader": "^0.13.1",
