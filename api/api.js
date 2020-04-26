@@ -8,7 +8,6 @@ import passport from "passport";
 import routes from "./routes/index";
 
 const app = express();
-const path = require("path")
 
 //middleware settings
 app.use(logger("dev"));
@@ -34,17 +33,9 @@ app.use(function (req, res, next) {
   );
   next();
 });
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/save-my-sinking-boat");
-
 app.use("/", routes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../public"));
-  app.get("*", (req, res)=>{
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-  })
-}
+mongoose.connect("mongodb://localhost/save-my-sinking-boat");
 
 app.use(function (req, res, next) {
   var err = new Error("Not Found");
