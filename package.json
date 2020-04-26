@@ -4,7 +4,6 @@
   "description": "Full Stack Developer Training POC",
   "main": "index.js",
   "scripts": {
-    "rimraf": "./node_modules/rimraf/bin.js",
     "clean": "rimraf public && mkdir public && cp client/index.html public/index.html",
     "deploy": "npm run clean && sudo npm run client-dist && pm2 start client/server.js -n \"save-my-sinking-boat\" && pm2 start api/server.js -n \"save-my-sinking-boat\"",
     "serve-api": "nodemon --exec babel-node api/server.js",
@@ -69,7 +68,7 @@
     "postcss": "^5.0.21",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
-    "rimraf": "^2.5.2",
+    "rimraf": "^2.7.1",
     "sass-loader": "^3.2.1",
     "should": "^9.0.2",
     "style-loader": "^0.13.1",
