@@ -1,28 +1,26 @@
-"use strict"
+'use strict'
 
-const path = require("path")
-const webpack = require("webpack")
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+let path = require('path')
+let webpack = require('webpack')
 
-const baseConfig = require("./base")
-const defaultSettings = require("./defaults")
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+let baseConfig = require('./base')
+let defaultSettings = require('./defaults')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = Object.assign({}, baseConfig, {
-  entry: path.join(__dirname, "../client/app.js"),
+let config = Object.assign({}, baseConfig, {
+  entry: path.join(__dirname, '../client/app.js'),
   cache: false,
-  devtool: "null",
+  devtool: 'null',
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": "production",
-      "process.env.DEV": process.env.DEV || false
+      'process.env.NODE_ENV': '"production"',
+      'process.env.DEV': process.env.DEV || false
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin("./css/style.css"),
-    new CleanWebpackPlugin()
+    new ExtractTextPlugin('./css/style.css')
   ],
   module: defaultSettings.getDefaultModules()
 })
