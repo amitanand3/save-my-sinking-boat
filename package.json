@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "cp client/index.html public/index.html",
-    "deploy": "npm run clean && sudo npm run client-prod && pm2 start client/server.js -n \"save-my-sinking-boat\" && pm2 start api/server.js -n \"save-my-sinking-boat\"",
+    "deploy": "npm run clean && npm run client-prod && pm2 start client/server.js -n \"save-my-sinking-boat\" && pm2 start api/server.js -n \"save-my-sinking-boat\"",
     "serve-api": "nodemon --exec babel-node api/server.js",
     "start-api": "babel-node api/server.js",
     "test": "mocha --compilers js:babel-core/register api/tests/userTest.js",
