@@ -1,3 +1,2 @@
-export const apiServiceUrl = process.env.DEV
-  ? "http://localhost:3000/"
-  : "https://save-my-sinking-boat.herokuapp.com/"; //production server url
+const PORT = process.env.PORT || 3000;
+export const apiServiceUrl = `http://localhost:${PORT}/`; //production server url

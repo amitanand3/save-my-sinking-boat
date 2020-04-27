@@ -9,6 +9,7 @@ import routes from "./routes/index";
 
 const app = express();
 const path = require("path")
+const PORT = process.env.PORT || 3000;
 
 //middleware settings
 app.use(logger("dev"));
@@ -70,6 +71,6 @@ app.use(function (err, req, res) {
   });
 });
 
-app.listen(3000);
+app.listen(PORT);
 
-console.log("Server running on http://localhost:3000");
+console.log("Server running on http://localhost:"+PORT);
