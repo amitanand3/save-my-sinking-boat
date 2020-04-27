@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "clean": "cp client/index.html public/index.html",
-    "deploy": "npm run clean && sudo npm run client-prod && pm2 start client/server.js -n \"save-my-sinking-boat\" && pm2 start api/server.js -n \"save-my-sinking-boat\"",
+    "deploy": "npm run clean && npm run client-prod && pm2 start client/server.js -n \"save-my-sinking-boat\" && pm2 start api/server.js -n \"save-my-sinking-boat\"",
     "serve-api": "nodemon --exec babel-node api/server.js",
     "start-api": "babel-node api/server.js",
     "test": "mocha --compilers js:babel-core/register api/tests/userTest.js",
     "client-dev": "webpack --env=dev --watch --colors",
     "client-prod": "webpack --env=production --progress --colors",
     "serve-client": "babel-node client/server.js",
-    "start": "npm run serve-client",
-    "heroku-postbuild": "npm install && npm run client-prod"
+    "start": "npm run deploy",
+    "heroku-postbuild": "npm install"
   },
   "keywords": [
     "node",
@@ -36,6 +36,7 @@
     "motion-ui": "^1.2.2",
     "passport": "^0.2.1",
     "passport-http": "^0.3.0",
+    "pm2": "^4.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
