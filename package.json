@@ -12,8 +12,8 @@
     "client-dev": "webpack --env=dev --watch --colors",
     "client-prod": "webpack --env=production --progress --colors",
     "serve-client": "babel-node client/server.js",
-    "start": "pm2 start api/server.js -n \"save-my-sinking-boat\"",
-    "heroku-postbuild": "npm install && npm run clean && npm run client-prod && pm2 start client/server.js -n \"save-my-sinking-boat\""
+    "start": "npm run start-api",
+    "heroku-postbuild": "npm install && npm run client-prod"
   },
   "keywords": [
     "node",
