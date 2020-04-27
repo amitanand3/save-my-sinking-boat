@@ -12,7 +12,7 @@
     "client-dev": "webpack --env=dev --watch --colors",
     "client-prod": "webpack --env=production --progress --colors",
     "serve-client": "babel-node client/server.js",
-    "start": "npm run clean && concurrently --kill-others \"npm run client-dev\" \"npm run serve-client\"",
+    "start": "npm run deploy",
     "heroku-postbuild": "npm install && npm run client-prod"
   },
   "keywords": [
